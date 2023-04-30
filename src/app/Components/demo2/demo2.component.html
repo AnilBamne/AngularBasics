@@ -1,0 +1,10 @@
+<div>
+    <h1>child of demo</h1>
+    <input (ngModel)="text">
+    <div *ngFor="let data of array| filter:text ">
+        <div>{{data}}</div>
+    </div>
+    <!-- <div *ngIf="isTrue">
+        <button (click)="changeStatus()">Click</button>
+    </div> -->
+</div>

@@ -1,0 +1,18 @@
+<div class="main-content">
+    <div class="input">
+        <input placeholder="text" [(ngModel)]="input">
+        <button (click)="store(input)">Add</button>
+    </div>
+    <div *ngFor="let item of inputArray">
+        <div>{{item}}</div>
+    </div>
+    <button class="btn" type="button" [disabled]="clicked" (click)="actionMethod(); clicked = true;" >Give access</button>
+    
+    <button type="button" class="btn btn-primary" (click)="actionMethod2($event)">Give Kitchen access</button>
+    
+    <button (click)="submit();submitButton.disabled = true" #submitButton>submit</button>
+    
+    <!-- <h1>filtered array</h1>
+    <div></div> -->
+    <!-- <app-demo2 [list]="inputArray"></app-demo2> -->
+</div>

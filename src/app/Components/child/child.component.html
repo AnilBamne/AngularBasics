@@ -1,0 +1,26 @@
+<div class="main">
+    <div>
+        <h1>This is child component</h1>
+    </div>
+    <div class="inputdata">
+        <p>data comming from parrent</p>
+        <div *ngFor="let item of inputData">
+            <p>{{item}}</p>
+        </div>
+    </div>
+    <div class="output">
+        <div>
+            <p>Data sharing to parent</p>
+            <div>
+                <input placeholder="input" [(ngModel)]="message">
+                <button (click)="onSubmit(message)">share</button>
+            </div>
+        </div>
+        <div *ngIf="isTrue">
+            <div style="padding: 10px;border: 0px solid gray;margin-top: 10px; background-color: rgb(241, 29, 227);border-radius: 10px;">
+                <h3>Controlling from parent</h3>
+            </div>
+        </div>
+    </div>
+    <app-sibling></app-sibling>
+</div>

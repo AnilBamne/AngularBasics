@@ -1,0 +1,41 @@
+
+<div class="main-container">
+    <div class="parent">
+        <h1>This is Parent!</h1>
+        <div>
+            <div>
+                <p>Data sharing to arent</p>
+                <input placeholder="input" [(ngModel)]="data">
+                <button (click)="onSubmit(data)">add</button>
+            </div>
+            
+            <div *ngFor="let item of array">
+               <div>{{item}}</div>
+            </div>
+            <div class="input">
+                <p>data coming from child</p>
+                <div>{{recievedMessage}}</div>
+            </div>
+            <div>
+                <p>datasharing via ViewChild:{{dataFromChild}}</p>
+                <p>datasharing via data service:{{dataService.num}}</p>
+                <div></div>
+            </div>
+            <div>
+                <h3>fruits array</h3>
+                <div *ngFor="let item of fruits">
+                    <div>{{item}}</div>
+                </div>
+            </div>
+            <div>
+                <p>Show child : <button (click)="showChild()">Show/Hide</button></p>
+            </div>
+            <div>
+                <p>controle child: <button (click)="controleChind()">Click Me</button></p>
+            </div>
+        </div>
+    </div>
+    <div class="child" *ngIf="show">
+        <app-child [inputData]=array (childEvent)="recieveData($event)"></app-child>
+    </div>
+</div>
